@@ -6,9 +6,9 @@
 
 ### Team Members :
 
-#### Name : Kacem Aimad
-#### Role : Full Stack Development , Including Front-end, Back-end, Database, API and QA/Testing
-#### Role Allocation Decision : I decided to be the sole developer of this project in order to handle all aspects of web development from Back-end to Front-end including Database Management , API, Quality assurance and Testing which will help me to improve my skills in Full Stack Development.
+Name : Kacem Aimad
+Role : Full Stack Development , Including Front-end, Back-end, Database, API and QA/Testing
+Role Allocation Decision : I decided to be the sole developer of this project in order to handle all aspects of web development from Back-end to Front-end including Database Management , API, Quality assurance and Testing which will help me to improve my skills in Full Stack Development.
 
 ### Technologies : 
 
