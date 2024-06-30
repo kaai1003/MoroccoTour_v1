@@ -11,17 +11,17 @@ from models.categories import Category
  Region Objects creations
 """
 
-list_regions =['Tanger-Tétouan-AlHoceima',
+list_regions =['Tanger-Tetouan-AlHoceima',
                'Oriental',
                'Fes-Meknes',
                'Rabat-Sale-Kenitra',
-               'Beni Mellal-Khénifra',
+               'Beni Mellal-Khenifra',
                'Casablanca-Settat',
                'Marrakech-Safi',
-               'Drâa-Tafilalet',
+               'Draa-Tafilalet',
                'Souss-Massa',
                'Guelmim-OuedNoun',
-               'Laâyoune-SaguiaalHamra',
+               'Laayoune-SaguiaalHamra',
                'Dakhla-OuedEdDahab']
 
 for item in list_regions:

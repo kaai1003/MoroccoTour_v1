@@ -12,4 +12,3 @@ class Facility(BaseModel, Base):
 
 
     name = Column('name', String(128), nullable=False, default="")
-    place_facilities = relationship("Facility", secondary=place_facility)
