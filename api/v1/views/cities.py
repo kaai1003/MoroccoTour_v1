@@ -19,10 +19,6 @@ def state_cities(region_id):
     list_cities = []
     for obj in all_states.values():
         if obj.id == region_id:
-            if models.storage_t != 'db':
-                for city in obj.cities:
-                    list_cities.append(city.to_dict())
-                return jsonify(list_cities)
             for city in storage.all(City).values():
                 if city.region_id == obj.id:
                     list_cities.append(city.to_dict())
