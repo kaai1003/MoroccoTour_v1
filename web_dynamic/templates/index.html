@@ -4,7 +4,7 @@
         <script src="../static/scripts/color-modes.js"></script>
         <meta charset="utf-8">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="../static/scripts/selectcities.js?{{ cache_id }}"></script>
+        <script type="text/javascript" src="../static/scripts/index.js?{{ cache_id }}"></script>
         <!--====== Title ======-->
         <title>Morocco Tour</title>
             <meta name="description" content="">
@@ -84,20 +84,6 @@
         <li class="nav-item">
           <a class="nav-link active text-white"  aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white"  href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu text-white" >
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
         <li class="nav-item text-white" >
         </li>
       </ul>
@@ -141,7 +127,7 @@
                   <br>
                   <br>
                     <!-- <input type="text" class="form-control" placeholder="find your distination" aria-label="Recipient's username" aria-describedby="button-addon2"> -->
-                    <button class="btn text-white" type="button" id="button-addon2" style="background-color: blueviolet;">Search</button>
+                    <button class="btn text-white" type="button" id="buttonsearch" style="background-color: blueviolet;">Search</button>
 
             </div>
             <br><br><br><br>
@@ -152,169 +138,23 @@
       <div class="album">
         <div class="container">
           <h1 class="disaplay-1 text-center fw-bold my-5" style="color: blueviolet;"> Best Places</h1>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-             <a href="showDistination.html" class="link">
-              <div class="card shadow-sm">
-                <a href="showDistination.html" class="link">
-                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-                </a>
-                  <div class="card-body">
-                    <h4 class="card-title fw-bold " > Casablanca  </h4>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                      </div>
-                      <small class="text-body-secondary">9 mins</small>
-                    </div>
-                  </div>
-              </div>
-            </div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="placesContainer">
+            {% for place in places %}
             <div class="col">
               <div class="card shadow-sm">
-                                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
+                <img src="../static/images/{{ place.id }}.webp" width="100%" height="225" alt="">
                 <div class="card-body">
-                  <h4 class="card-title fw-bold " > Agadir</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h4 class="card-title fw-bold">{{ place.name }}</h4>
+                  <p class="card-text">{{ place.description }}</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
-                <div class="card-body">
-                  <h4 class="card-title fw-bold " > Tanger</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
+            {% endfor %}
                   </div>
-                </div>
               </div>
             </div>
-
-            <div class="col">
-              <div class="card shadow-sm">
-                                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
-                <div class="card-body">
-                  <h4 class="card-title fw-bold " > Fes</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
-                <div class="card-body">
-                  <h4 class="card-title fw-bold " > Marrakech</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in .</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
-                <div class="card-body">
-                  <h4 class="card-title fw-bold " > Mohamadia</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card shadow-sm">
-                                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
-                <div class="card-body">
-                  <h4 class="card-title fw-bold " > Asila</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
-                <div class="card-body">
-                  <h4 class="card-title fw-bold " > Houssima</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="../static/images/card.webp" width="100%" height="225" alt="">
-
-                <!--                 <img src="../static/images/card.webp" width="100%" height="225" alt="">
- -->
-                <div class="card-body">
-                  <h4 class="card-title fw-bold " > Nador</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </main>
 
