@@ -9,7 +9,7 @@ from models import storage
 from api.v1.views import app_views
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "0.0.0.0"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.register_blueprint(app_views)
 
 
@@ -26,5 +26,5 @@ def not_found(error):
 
 if __name__ == '__main__':
     host = '0.0.0.0'
-    port = '5000'
+    port = '5001'
     app.run(host, port, threaded=True)

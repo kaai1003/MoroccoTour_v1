@@ -13,11 +13,11 @@ from models.cities import City
 @app_views.route('/regions/<region_id>/cities',
                  methods=['GET'],
                  strict_slashes=False)
-def state_cities(region_id):
+def region_cities(region_id):
     """retrieve all cities of region"""
-    all_states = storage.all(Region)
+    all_regions = storage.all(Region)
     list_cities = []
-    for obj in all_states.values():
+    for obj in all_regions.values():
         if obj.id == region_id:
             for city in storage.all(City).values():
                 if city.region_id == obj.id:
